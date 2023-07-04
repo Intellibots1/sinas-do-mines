@@ -13,7 +13,7 @@ async function sendMessage(channel_id) {
   );
 }
 
-const job = new CronJob("*/4 * * * *", () => {
+const job = new CronJob("*/8 * * * *", () => {
   sendMessage("-1001910500046");
 });
 
