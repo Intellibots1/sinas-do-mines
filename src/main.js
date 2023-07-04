@@ -20,6 +20,10 @@ const job = new CronJob("*/8 * * * *", () => {
 bot.launch();
 job.start();
 
+app.get("/play", (req, res) => {
+  res.send({ ping: "pong ⚾" });
+});
+
 app.listen(8080 || process.env.PORT, () => {
   console.log(`Bot is running on http://localhost:8080`);
 });
