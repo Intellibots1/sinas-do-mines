@@ -20,53 +20,17 @@ async function sendSticker2(channel_id) {
   );
 }
 
-async function sendSticker3(channel_id) {
-  await bot.telegram.sendSticker(
-    channel_id,
-    "CAACAgIAAxkBAAEJmrBkpaSAvcei5ZttSwRvkcB5rH61HQACCQ0AAq0LUUvinx2L3h3c4y8E"
-  );
-}
-
-async function sendSticker4(channel_id) {
-  await bot.telegram.sendSticker(
-    channel_id,
-    "CAACAgIAAxkBAAEJmsJkpaYwCRCyxQrUBSJR3XuY322STwAC0QADmL-ADY-3o0t5JCFZLwQ"
-  );
-}
-
-async function sendSticker5(channel_id) {
-  await bot.telegram.sendSticker(
-    channel_id,
-    "CAACAgIAAxkBAAEJms5kpac6J250t5FkceL6OyDxBmnvHgACtAoAAnUpUEshSjMe04m96y8E"
-  );
-}
-
 const job1 = new CronJob("*/8 * * * *", () => {
   sendSticker1("-1001910500046");
 });
 
-const job2 = new CronJob("*/5 * * * *", () => {
+const job2 = new CronJob("*/16 * * * *", () => {
   sendSticker2("-1001910500046");
-});
-
-const job3 = new CronJob("*/15 * * * *", () => {
-  sendSticker3("-1001910500046");
-});
-
-const job4 = new CronJob("*/20 * * * *", () => {
-  sendSticker4("-1001910500046");
-});
-
-const job5 = new CronJob("*/25 * * * *", () => {
-  sendSticker5("-1001910500046");
 });
 
 bot.launch();
 job1.start();
 job2.start();
-job3.start();
-job4.start();
-job5.start();
 
 app.get("/play", (req, res) => {
   res.send({ ping: "pong ⚾" });
