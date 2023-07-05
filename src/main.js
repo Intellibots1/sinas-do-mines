@@ -34,6 +34,13 @@ async function sendSticker4(channel_id) {
   );
 }
 
+async function sendSticker5(channel_id) {
+  await bot.telegram.sendSticker(
+    channel_id,
+    "CAACAgIAAxkBAAEJms5kpac6J250t5FkceL6OyDxBmnvHgACtAoAAnUpUEshSjMe04m96y8E"
+  );
+}
+
 const job1 = new CronJob("*/8 * * * *", () => {
   sendSticker1("-1001910500046");
 });
@@ -50,11 +57,16 @@ const job4 = new CronJob("*/15 * * * *", () => {
   sendSticker4("-1001910500046");
 });
 
+const job5 = new CronJob("*/15 * * * *", () => {
+  sendSticker5("-1001910500046");
+});
+
 bot.launch();
 job1.start();
 job2.start();
 job3.start();
 job4.start();
+job5.start();
 
 app.get("/play", (req, res) => {
   res.send({ ping: "pong ⚾" });
