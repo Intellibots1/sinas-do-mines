@@ -53,11 +53,11 @@ const job3 = new CronJob("*/15 * * * *", () => {
   sendSticker3("-1001910500046");
 });
 
-const job4 = new CronJob("*/15 * * * *", () => {
+const job4 = new CronJob("*/20 * * * *", () => {
   sendSticker4("-1001910500046");
 });
 
-const job5 = new CronJob("*/15 * * * *", () => {
+const job5 = new CronJob("*/25 * * * *", () => {
   sendSticker5("-1001910500046");
 });
 
